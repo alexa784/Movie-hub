@@ -3,12 +3,10 @@ import MovieCard from "./MovieCard";
 import useMovies from "../hooks/useMovies";
 import { Spinner } from "react-bootstrap";
 
-const dummy = [0, 1, 2, 3, 4, 5, 6, 7];
-
 const MovieGrid = () => {
   const { data, error, isLoading } = useMovies();
 
-  if (error) throw error;
+  if (error) throw new Error("Server ne salje podatke!");
   if (isLoading) return <Spinner />;
 
   return (
@@ -23,5 +21,4 @@ const MovieGrid = () => {
     </div>
   );
 };
-/**Vidjeti na bootstrap 5 gridu kako ovo funkcionise */
 export default MovieGrid;

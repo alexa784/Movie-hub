@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios, { AxiosRequestConfig } from "axios";
 
 export interface ResponseData<T> {
     page: number;
@@ -18,7 +18,7 @@ export class ApiClient<FetchType>{
   constructor(endpoint:string){
     this.endpoint=endpoint;
   }
-  fetchData=()=>{
-    return axiosInstance.get<FetchType>(this.endpoint).then(res=>res.data)
+  fetchData=(params?:AxiosRequestConfig)=>{
+    return axiosInstance.get<FetchType>(this.endpoint,params).then(res=>res.data)
   }
 }
