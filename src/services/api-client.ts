@@ -1,8 +1,8 @@
 import axios from "axios";
 
-interface ResponseData {
+export interface ResponseData<T> {
     page: number;
-    results: any[];
+    results: T[];
     total_pages: number;
     total_results: number;
   }
