@@ -20,5 +20,4 @@ const useProviders = () => {
 
     return {providers:data?.results,error,isLoading};
 }
-
 export default useProviders

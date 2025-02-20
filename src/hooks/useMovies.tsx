@@ -12,9 +12,7 @@ export interface Movie {
   poster_path: string;
   genre_ids: number[];
 }
-const apiClient = new ApiClient<ResponseData<Movie>>(
-  "/3/discover/movie?include_adult=false"
-);
+const apiClient = new ApiClient<ResponseData<Movie>>("/3/discover/movie");
 
 const useMovies = () => {
   const { queryMovies } = useQueryMovieStore();
@@ -25,7 +23,9 @@ const useMovies = () => {
     queryFn: () =>
       apiClient.fetchData({
         params: {
+          include_adult: true,
           with_genres: queryMovies.genreId,
+          with_watch_providers: queryMovies.providerId,
         },
       }),
     staleTime: 24 * 60 * 60 * 1000, //24h
