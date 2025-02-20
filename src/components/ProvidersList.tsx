@@ -1,9 +1,8 @@
-import React from "react";
-import useProviders from "../hooks/useProviders";
-import Dropdown from "react-bootstrap/esm/Dropdown";
-import useQueryMovieStore from "../stores/movieQueryStores";
-import useProvider from "../hooks/useProvider";
 import { Spinner } from "react-bootstrap";
+import Dropdown from "react-bootstrap/esm/Dropdown";
+import useProvider from "../hooks/useProvider";
+import useProviders from "../hooks/useProviders";
+import useQueryMovieStore from "../stores/movieQueryStores";
 
 const ProvidersLists = () => {
   const { providers, error, isLoading } = useProviders();
