@@ -15,7 +15,7 @@ const MovieCard = ({ movie }: Props) => {
         variant="top"
       />
       <Card.Body>
-        <ProvidersIconList movieId={movie} />
+        <ProvidersIconList movie={movie} />
       </Card.Body>
       <Card.Title>{movie.title}</Card.Title>
     </Card>

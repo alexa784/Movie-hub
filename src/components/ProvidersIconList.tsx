@@ -1,14 +1,13 @@
-import React from "react";
+import { Image, Spinner } from "react-bootstrap";
 import { Movie } from "../hooks/useMovies";
 import useProvidersByMovieId from "../hooks/useProvidersByMovieId";
-import { Spinner, Image, Button } from "react-bootstrap";
 
 interface Props {
-  movieId: Movie;
+  movie: Movie;
 }
 
-const ProvidersIconList = ({ movieId }: Props) => {
-  const { providers, error, isLoading } = useProvidersByMovieId(movieId.id);
+const ProvidersIconList = ({ movie }: Props) => {
+  const { providers, error, isLoading } = useProvidersByMovieId(movie.id);
 
   if (error) throw error;
   if (isLoading) return <Spinner />;
@@ -33,3 +32,13 @@ const ProvidersIconList = ({ movieId }: Props) => {
 /** Provjeriti da li radi sortiranje po provideru */
 // https://image.tmdb.org/t/p/w500/ ok
 export default ProvidersIconList;
+
+/**const iconMap: { [key: string]: IconType } = {
+    pc: FaWindows,
+    xbox: FaXbox,
+    android: FaAndroid,
+    apple: FaApple,
+    ubuntu: FaUbuntu,
+    playstation: FaPlaystation,
+  };
+ */

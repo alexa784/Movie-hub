@@ -25,7 +25,8 @@ const useMovies = () => {
         params: {
           include_adult: true,
           with_genres: queryMovies.genreId,
-          with_watch_providers: queryMovies.providerId,
+          with_watch_providers: queryMovies.providerId, // with_watch_providers always use with watch_region!
+          watch_region: "US",
         },
       }),
     staleTime: 24 * 60 * 60 * 1000, //24h
