@@ -1,6 +1,24 @@
 import { Image, Spinner } from "react-bootstrap";
 import { Movie } from "../hooks/useMovies";
 import useProvidersByMovieId from "../hooks/useProvidersByMovieId";
+import {
+  FaAmazon,
+  FaApple,
+  FaGooglePlay,
+  FaYoutube,
+  FaSpotify,
+  FaQuestion,
+} from "react-icons/fa";
+import {
+  SiNetflix,
+  SiAmazonprime,
+  SiApple,
+  SiGoogleplay,
+  SiYoutubemusic,
+  SiHbo,
+} from "react-icons/si";
+
+import { IconType } from "react-icons";
 
 interface Props {
   movie: Movie;
@@ -12,19 +30,31 @@ const ProvidersIconList = ({ movie }: Props) => {
   if (error) throw error;
   if (isLoading) return <Spinner />;
   const limit = 4;
-
+  const iconMap: { [key: string]: IconType } = {
+    amazon: FaAmazon,
+    apple: FaApple,
+    google: FaGooglePlay,
+    youtube: FaYoutube,
+    spotify: FaSpotify,
+    netflix: SiNetflix,
+    amazonPrime: SiAmazonprime,
+    noProvider: FaQuestion,
+  };
+  let counterOfShowed = 0;
+  const NoProviderIcon = iconMap["noProvider"];
   return (
     <div>
-      {providers?.slice(0, limit + 1).map((p) => (
-        <Image
-          className="mb-1 me-2"
-          src={"https://image.tmdb.org/t/p/w92" + p.logo_path}
-          alt="logo"
-          width={"40px"}
-          style={{ borderRadius: "25%" }}
-        />
-      ))}
-      <button className="btn btn-outline-primary">. . .</button>
+      {providers?.slice(0, limit + 1).map((p) => {
+        const providerName = p.provider_name.toLowerCase();
+        if (providerName in iconMap) {
+          counterOfShowed += 1;
+          const Icon = iconMap[providerName];
+          return <Icon className="me-2 opacity-50" key={p.provider_id}></Icon>;
+        } else {
+          return null;
+        }
+      })}
+      {!counterOfShowed ? <NoProviderIcon /> : null}
     </div>
   );
 };

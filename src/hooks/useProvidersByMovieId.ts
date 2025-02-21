@@ -41,10 +41,16 @@ const clearDuplications=(country:Country)=>{
         US.rent.forEach(elem=>providers.push(elem))
 
     const uniqueProviders = providers.filter(
-        (provider, index, self) => self.findIndex(p => p.provider_id === provider.provider_id) === index
+        (provider, index, self) => self.findIndex(p => provider.provider_name.includes(p.provider_name)) === index
       );
     printProviders(uniqueProviders);
-    return providers;
+    return uniqueProviders;
+}
+const getOnlyFirstWords=(providers:Provider[])=>{
+    return providers.map(p=>{
+        p.provider_name=p.provider_name.split(" ")[0];
+        return p;
+    });
 }
 
 const useProvidersByMovieId = (movieId:number) => {
@@ -57,6 +63,7 @@ const useProvidersByMovieId = (movieId:number) => {
     if(data){
         providers=clearDuplications(data.results);
         providers.sort((a,b)=>a.display_priority-b.display_priority)
+        providers=getOnlyFirstWords(providers);
     }
     return {providers,error,isLoading};
 }
