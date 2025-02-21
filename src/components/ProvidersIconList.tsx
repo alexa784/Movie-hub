@@ -54,21 +54,8 @@ const ProvidersIconList = ({ movie }: Props) => {
           return null;
         }
       })}
-      {!counterOfShowed ? <NoProviderIcon /> : null}
+      {!counterOfShowed ? <NoProviderIcon className="me-2 opacity-50" /> : null}
     </div>
   );
 };
-/** Srediti da lijepo izgleda lista providera */
-/** Provjeriti da li radi sortiranje po provideru */
-// https://image.tmdb.org/t/p/w500/ ok
 export default ProvidersIconList;
-
-/**const iconMap: { [key: string]: IconType } = {
-    pc: FaWindows,
-    xbox: FaXbox,
-    android: FaAndroid,
-    apple: FaApple,
-    ubuntu: FaUbuntu,
-    playstation: FaPlaystation,
-  };
- */

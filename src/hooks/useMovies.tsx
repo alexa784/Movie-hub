@@ -11,6 +11,7 @@ export interface Movie {
   backdrop_path: string;
   poster_path: string;
   genre_ids: number[];
+  vote_average: number;
 }
 const apiClient = new ApiClient<ResponseData<Movie>>("/3/discover/movie");
 
