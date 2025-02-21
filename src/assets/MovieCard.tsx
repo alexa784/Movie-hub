@@ -3,7 +3,6 @@ import { Movie } from "../hooks/useMovies";
 import ProvidersIconList from "./ProvidersIconList";
 import { Link } from "react-router-dom";
 import MovieScore from "./MovieScore";
-import Emoji from "./Emoji";
 
 interface Props {
   movie: Movie;
@@ -30,7 +29,6 @@ const MovieCard = ({ movie }: Props) => {
             {movie.title}
           </Link>
         </Card.Title>
-        <Emoji movie={movie} />
       </Card.Body>
     </Card>
   );

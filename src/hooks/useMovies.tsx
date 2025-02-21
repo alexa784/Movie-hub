@@ -12,6 +12,7 @@ export interface Movie {
   poster_path: string;
   genre_ids: number[];
   vote_average: number;
+  popularity: number;
 }
 const apiClient = new ApiClient<ResponseData<Movie>>("/3/discover/movie");
 
