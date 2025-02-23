@@ -6,14 +6,17 @@ interface QueryMovies{
 }
 interface QueryMovieStore{
     queryMovies:QueryMovies;
-    setGenreId:(genreId:number)=>void;
+    setGenreId:(genreId:number|null)=>void;
     setProviderId:(providerId:number)=>void;
 }
 
 const useQueryMovieStore= create<QueryMovieStore>(set=>({
     queryMovies:{},
-    setGenreId:(genreId:number)=>set(()=>({queryMovies:{genreId:genreId}})),
-    setProviderId:(providerId:number)=>set(()=>({queryMovies:{providerId:providerId}}))
+    setGenreId:(genreId:number|null)=>set((store)=>{
+        if(genreId) return ({queryMovies:{...store.queryMovies, genreId}});
+        else return (({queryMovies:{...store.queryMovies}}));
+    }),
+    setProviderId:(providerId:number)=>set((store)=>({queryMovies:{ ...store.queryMovies,providerId}}))
 }));
 
 export default useQueryMovieStore;

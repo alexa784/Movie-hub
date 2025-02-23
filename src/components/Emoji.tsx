@@ -1,7 +1,4 @@
 import { Figure } from "react-bootstrap";
-import bullsEye from "../assets/bulls-eye.webp";
-import meh from "../assets/meh.webp";
-import thumbsUp from "../assets/thumbs-up.webp";
 import getCorrespondingEmoji from "../services/getCorrespondingEmoji";
 import { Movie } from "../hooks/useMovies";
 

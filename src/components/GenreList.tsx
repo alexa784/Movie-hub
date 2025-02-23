@@ -1,6 +1,5 @@
-import React from "react";
-import useGenres from "../hooks/useGenres";
 import { Stack } from "react-bootstrap";
+import useGenres from "../hooks/useGenres";
 import useQueryMovieStore from "../stores/movieQueryStores";
 
 const GenreList = () => {
