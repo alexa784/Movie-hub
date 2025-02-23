@@ -5,7 +5,6 @@ import useQueryMovieStore from "../stores/movieQueryStores";
 const GenreList = () => {
   const { genres } = useGenres();
   const { setGenreId } = useQueryMovieStore();
-
   return (
     <Stack direction="vertical">
       {genres?.map((g) => (

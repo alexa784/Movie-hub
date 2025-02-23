@@ -1,12 +1,13 @@
 import { Stack, Image } from "react-bootstrap";
 import logo from "../assets/logo.webp";
 import ColorModeSwitch from "./ColorModeSwitch";
+import SearchMovies from "./SearchMovies";
 
 const NavBar = () => {
   return (
-    <Stack direction="horizontal" className="justify-content-between">
+    <Stack direction="horizontal" className="justify-content-between" gap={3}>
       <Image src={logo} alt="logo" width={"60px"} />
-      <div className="">Navigation Bar</div>
+      <SearchMovies />
       <ColorModeSwitch />
     </Stack>
   );

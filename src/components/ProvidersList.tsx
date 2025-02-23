@@ -11,6 +11,11 @@ const ProvidersLists = () => {
   );
   const setProviderId = useQueryMovieStore((s) => s.setProviderId);
   const selectedProvider = useProvider(selectedProviderId);
+  const defaultItem = (
+    <Dropdown.Item key={-1} onClick={() => setProviderId(null)}>
+      default
+    </Dropdown.Item>
+  );
 
   if (error) throw error;
   if (isLoading) return <Spinner />;
@@ -22,6 +27,7 @@ const ProvidersLists = () => {
       </Dropdown.Toggle>
 
       <Dropdown.Menu>
+        {defaultItem}
         {providers?.map((p) => {
           return (
             <Dropdown.Item

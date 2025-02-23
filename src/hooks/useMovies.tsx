@@ -3,6 +3,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { ApiClient, ResponseData } from "../services/api-client";
 import useQueryMovieStore from "../stores/movieQueryStores";
+import getEndpoint from "../services/getEndpoint";
 
 export interface Movie {
   id: number;
@@ -14,10 +15,11 @@ export interface Movie {
   vote_average: number;
   popularity: number;
 }
-const apiClient = new ApiClient<ResponseData<Movie>>("/3/discover/movie");
 
 const useMovies = () => {
   const { queryMovies } = useQueryMovieStore();
+  const endPoint = getEndpoint(queryMovies);
+  const apiClient = new ApiClient<ResponseData<Movie>>(endPoint);
 
   console.log(`useMovies= genre= ${queryMovies.genreId}`);
   return useQuery({
@@ -29,9 +31,10 @@ const useMovies = () => {
           with_genres: queryMovies.genreId,
           with_watch_providers: queryMovies.providerId, // with_watch_providers always use with watch_region!
           watch_region: "US",
+          query: queryMovies.searchText,
         },
       }),
-    staleTime: 24 * 60 * 60 * 1000, //24h
+    //staleTime: 24 * 60 * 60 * 1000, //24h
   });
 };
 

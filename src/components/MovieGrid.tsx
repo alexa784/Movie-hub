@@ -2,6 +2,7 @@ import React from "react";
 import MovieCard from "./MovieCard";
 import useMovies from "../hooks/useMovies";
 import { Spinner } from "react-bootstrap";
+import useMoviesByTitle from "../hooks/useMoviesByTitle";
 
 const MovieGrid = () => {
   const { data, error, isLoading } = useMovies();

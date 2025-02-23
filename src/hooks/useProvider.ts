@@ -1,5 +1,4 @@
-import React from 'react'
-import useProviders from './useProviders'
+import useProviders from './useProviders';
 
 const useProvider = (id:number|undefined) => {
   const {providers,error,isLoading}=useProviders();
