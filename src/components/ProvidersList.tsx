@@ -16,6 +16,7 @@ const ProvidersLists = () => {
       default
     </Dropdown.Item>
   );
+  const FirstTenproviders = providers?.slice(0, 20);
 
   if (error) throw error;
   if (isLoading) return <Spinner />;
@@ -28,7 +29,7 @@ const ProvidersLists = () => {
 
       <Dropdown.Menu>
         {defaultItem}
-        {providers?.map((p) => {
+        {FirstTenproviders?.map((p) => {
           return (
             <Dropdown.Item
               key={p.provider_id}
