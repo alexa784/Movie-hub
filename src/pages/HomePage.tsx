@@ -3,6 +3,7 @@ import GenreList from "../components/GenreList";
 import GenreListButton from "../components/GenreListButton";
 import MovieGrid from "../components/MovieGrid";
 import Providers from "../components/ProvidersList";
+import SortMoviesList from "../components/SortSelector";
 
 const HomePage = () => {
   return (
@@ -16,6 +17,7 @@ const HomePage = () => {
             <Stack direction="horizontal">
               <Providers />
               <GenreListButton />
+              <SortMoviesList />
             </Stack>
             <MovieGrid />
           </div>

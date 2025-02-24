@@ -18,9 +18,9 @@ class Emoji{
     }
 }
 const getCorrespondingEmoji=(score:number)=>{
-    const mehEmoji=new Emoji(meh,0,500);
-    const thumbsUpEmoji=new Emoji(thumbsUp,500,1000);
-    const bullsEyeEmoji=new Emoji(bullsEye,1000,15000,25);
+    const mehEmoji=new Emoji(meh,0,100);
+    const thumbsUpEmoji=new Emoji(thumbsUp,100,500);
+    const bullsEyeEmoji=new Emoji(bullsEye,500,15000,25);
     
     if(mehEmoji.isIt(score)) return mehEmoji;
     if(thumbsUpEmoji.isIt(score)) return thumbsUpEmoji;

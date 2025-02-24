@@ -32,6 +32,7 @@ const useMovies = () => {
           with_watch_providers: queryMovies.providerId, // with_watch_providers always use with watch_region!
           watch_region: "US",
           query: queryMovies.searchText,
+          sort_by: queryMovies.searchParam,
         },
       }),
     //staleTime: 24 * 60 * 60 * 1000, //24h
