@@ -18,7 +18,7 @@ const SearchMovies = () => {
           //navigate("/");
         }
       }}
-      style={{ width: "100%" }}
+      style={{ width: "90%" }}
     >
       <InputGroup className="">
         <Form.Control

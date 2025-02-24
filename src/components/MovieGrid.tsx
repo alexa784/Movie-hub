@@ -1,14 +1,12 @@
-import React from "react";
-import MovieCard from "./MovieCard";
 import useMovies from "../hooks/useMovies";
-import { Spinner } from "react-bootstrap";
-import useMoviesByTitle from "../hooks/useMoviesByTitle";
+import MovieCard from "./MovieCard";
+import MovieCardSkeleton from "./MovieCardSkeleton";
 
 const MovieGrid = () => {
   const { data, error, isLoading } = useMovies();
+  const skeletons = [0, 1, 2, 3, 4, 5, 6, 7, 8];
 
   if (error) throw new Error("Server ne salje podatke!");
-  if (isLoading) return <Spinner />;
 
   return (
     <div className="container">
@@ -18,6 +16,7 @@ const MovieGrid = () => {
             <MovieCard movie={m} />
           </div>
         ))}
+        {isLoading && skeletons.map((s) => <MovieCardSkeleton />)}
       </div>
     </div>
   );

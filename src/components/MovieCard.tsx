@@ -11,7 +11,7 @@ interface Props {
 
 const MovieCard = ({ movie }: Props) => {
   return (
-    <Card className="m-1">
+    <Card className="m-1 mb-5">
       <Card.Img
         src={"https://image.tmdb.org/t/p/w500/" + movie.poster_path}
         variant="top"
