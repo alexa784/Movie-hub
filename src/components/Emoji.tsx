@@ -10,8 +10,8 @@ const Emoji = ({ movie }: Props) => {
   const emoji = getCorrespondingEmoji(movie.popularity);
 
   return (
-    <Figure className="mb-1 ms-1" style={{ width: `${emoji?.width}px` }}>
-      <Figure.Image src={emoji?.path}></Figure.Image>
+    <Figure className="mb-0 mt-1" style={{ width: `${emoji?.width}px` }}>
+      <Figure.Image className={"mb-1"} src={emoji?.path}></Figure.Image>
     </Figure>
   );
 };

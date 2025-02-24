@@ -7,6 +7,7 @@ const ColorModeSwitch = () => {
   htmlElement?.setAttribute("data-bs-theme", mode ? "light" : "dark");
   return (
     <Button
+      className="me-1"
       variant={mode ? "secondary" : "light"}
       onClick={() => {
         setMode(!mode);

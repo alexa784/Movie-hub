@@ -17,11 +17,11 @@ const MovieCard = ({ movie }: Props) => {
         variant="top"
       />
       <Card.Body style={{ height: "30%" }}>
-        <Stack direction="horizontal" className="justify-content-between">
+        <Stack direction="horizontal" className="justify-content-between mb-1">
           <ProvidersIconList movie={movie} />
           <MovieScore score={movie.vote_average} />
         </Stack>
-        <Card.Title>
+        <Card.Title className="mb-1">
           <Link
             className="text-decoration-none"
             to={`/`}

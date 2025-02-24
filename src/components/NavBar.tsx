@@ -5,7 +5,11 @@ import SearchMovies from "./SearchMovies";
 
 const NavBar = () => {
   return (
-    <Stack direction="horizontal" className="justify-content-between" gap={3}>
+    <Stack
+      direction="horizontal"
+      className="justify-content-between me-1"
+      gap={3}
+    >
       <Image src={logo} alt="logo" width={"60px"} />
       <SearchMovies />
       <ColorModeSwitch />

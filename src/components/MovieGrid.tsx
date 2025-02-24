@@ -17,7 +17,8 @@ const MovieGrid = () => {
               <MovieCard movie={m} />
             </div>
           ))}
-          {isLoading && skeletons.map((s) => <MovieCardSkeleton />)}
+          {isLoading &&
+            skeletons.map((s, index) => <MovieCardSkeleton key={index} />)}
         </div>
       </div>
       <button

@@ -14,7 +14,7 @@ const HomePage = () => {
             <GenreList />
           </div>
           <div className="col-sm-12 col-lg-10">
-            <Stack direction="horizontal">
+            <Stack direction="horizontal" className="ms-1">
               <Providers />
               <GenreListButton />
               <SortMoviesList />
