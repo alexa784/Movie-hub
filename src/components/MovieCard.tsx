@@ -16,7 +16,9 @@ const MovieCard = ({ movie }: Props) => {
     : noImage;
   return (
     <Card className="m-1 mb-5">
-      <Card.Img src={imagePath} variant="top" />
+      <Link to={`movie/${movie.id}`}>
+        <Card.Img src={imagePath} variant="top" />
+      </Link>
       <Card.Body style={{ height: "30%" }}>
         <Stack direction="horizontal" className="justify-content-between mb-1">
           <ProvidersIconList movie={movie} />
@@ -25,7 +27,7 @@ const MovieCard = ({ movie }: Props) => {
         <Card.Title className="mb-1">
           <Link
             className="text-decoration-none"
-            to={`/`}
+            to={`movie/${movie.id}`}
             style={{ fontSize: "1.5em" }}
           >
             {movie.title}

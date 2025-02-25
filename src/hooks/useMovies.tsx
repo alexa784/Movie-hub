@@ -5,6 +5,18 @@ import { ApiClient, ResponseData } from "../services/api-client";
 import getEndpoint from "../services/getEndpoint";
 import useQueryMovieStore from "../stores/movieQueryStores";
 
+interface Video {
+  iso_639_1: string;
+  iso_3166_1: string;
+  name: string;
+  key: string;
+  site: string;
+  size: number;
+  type: string;
+  official: boolean;
+  published_at: Date;
+  id: string;
+}
 export interface Movie {
   id: number;
   title: string;
@@ -14,6 +26,8 @@ export interface Movie {
   genre_ids: number[];
   vote_average: number;
   popularity: number;
+  overview: string;
+  videos: { results: Video[] };
 }
 // <FetchDataResponse<Game>,Error>
 const useMovies = () => {
