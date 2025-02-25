@@ -43,7 +43,7 @@ const clearDuplications=(country:Country)=>{
     const uniqueProviders = providers.filter(
         (provider, index, self) => self.findIndex(p => provider.provider_name.includes(p.provider_name)) === index
       );
-    printProviders(uniqueProviders);
+    
     return uniqueProviders;
 }
 const getOnlyFirstWords=(providers:Provider[])=>{

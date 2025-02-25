@@ -2,6 +2,7 @@ import { Dropdown, Spinner } from "react-bootstrap";
 import useGenres from "../hooks/useGenres";
 import useQueryMovieStore from "../stores/movieQueryStores";
 import useGenre from "../hooks/useGenre";
+import ButtonSkeleton from "./ButtonSkeleton";
 
 const GenreListButton = () => {
   const { genres, error, isLoading } = useGenres();
@@ -15,7 +16,7 @@ const GenreListButton = () => {
   );
 
   if (error) throw error;
-  if (isLoading) return <Spinner />;
+  if (isLoading) return <ButtonSkeleton />;
 
   return (
     <Dropdown style={{ marginBottom: 5, paddingLeft: 11 }}>

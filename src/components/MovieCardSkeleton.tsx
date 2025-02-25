@@ -1,4 +1,4 @@
-import { Card, Placeholder } from "react-bootstrap";
+import { Card, Placeholder, Stack } from "react-bootstrap";
 
 const MovieCardSkeleton = () => {
   return (
@@ -9,13 +9,11 @@ const MovieCardSkeleton = () => {
       ></div>
       <Card.Body>
         <Placeholder as={Card.Title} animation="glow">
-          <Placeholder xs={6} />
+          <Stack direction="horizontal" className="justify-content-between">
+            <Placeholder xs={7} /> <Placeholder xs={2} />
+          </Stack>
         </Placeholder>
-        <Placeholder as={Card.Text} animation="glow">
-          <Placeholder xs={7} /> <Placeholder xs={4} /> <Placeholder xs={4} />{" "}
-          <Placeholder xs={6} /> <Placeholder xs={8} />
-        </Placeholder>
-        <Placeholder.Button variant="primary" xs={6} />
+        <Placeholder.Button variant="primary" xs={8} />
       </Card.Body>
     </Card>
   );

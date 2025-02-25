@@ -3,6 +3,7 @@ import Dropdown from "react-bootstrap/esm/Dropdown";
 import useProvider from "../hooks/useProvider";
 import useProviders from "../hooks/useProviders";
 import useQueryMovieStore from "../stores/movieQueryStores";
+import ButtonSkeleton from "./ButtonSkeleton";
 
 const ProvidersLists = () => {
   const { providers, error, isLoading } = useProviders();
@@ -19,7 +20,7 @@ const ProvidersLists = () => {
   const FirstTenproviders = providers?.slice(0, 20);
 
   if (error) throw error;
-  if (isLoading) return <Spinner />;
+  if (isLoading) return <ButtonSkeleton />;
 
   return (
     <Dropdown style={{ marginBottom: 5, paddingLeft: 11 }}>
