@@ -17,6 +17,26 @@ interface Video {
   published_at: Date;
   id: string;
 }
+interface Person {
+  adult: boolean;
+  gender: number;
+  id: number;
+  known_for_department: string;
+  name: string;
+  original_name: string;
+  popularity: number;
+  profile_path: string;
+  cast_id: number;
+  character: string;
+  credit_id: string;
+  order: number;
+}
+interface Company {
+  id: number;
+  logo_path: string;
+  name: string;
+  origin_country: string;
+}
 export interface Movie {
   id: number;
   title: string;
@@ -24,12 +44,14 @@ export interface Movie {
   backdrop_path: string;
   poster_path: string;
   genre_ids: number[];
+  genres: [{ id: number; name: string }];
   vote_average: number;
   popularity: number;
   overview: string;
   videos: { results: Video[] };
+  credits: { cast: Person[] };
+  production_companies: Company[];
 }
-// <FetchDataResponse<Game>,Error>
 const useMovies = () => {
   const { queryMovies } = useQueryMovieStore();
   const endPoint = getEndpoint(queryMovies);
@@ -59,29 +81,5 @@ const useMovies = () => {
     staleTime: 24 * 60 * 60 * 1000, //24h
   });
 };
-
-// OK
-/*const useMovies = () => {
-  const { queryMovies } = useQueryMovieStore();
-  const endPoint = getEndpoint(queryMovies);
-  const apiClient = new ApiClient<ResponseData<Movie>>(endPoint);
-
-  console.log(`useMovies= genre= ${queryMovies.genreId}`);
-  return useQuery({
-    queryKey: ["movies", queryMovies],
-    queryFn: () =>
-      apiClient.fetchData({
-        params: {
-          include_adult: true,
-          with_genres: queryMovies.genreId,
-          with_watch_providers: queryMovies.providerId, // with_watch_providers always use with watch_region!
-          watch_region: "US",
-          query: queryMovies.searchText,
-          sort_by: queryMovies.searchParam,
-        },
-      }),
-    //staleTime: 24 * 60 * 60 * 1000, //24h
-  });
-};*/
 
 export default useMovies;

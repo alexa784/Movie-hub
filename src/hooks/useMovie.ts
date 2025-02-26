@@ -9,7 +9,7 @@ const useMovie=(id?:number)=>{
     const{data,error,isLoading}=useQuery({
         queryKey:["movie",id],
         queryFn:()=>apiClient.fetchData({params:{
-            append_to_response:"videos,images"
+            append_to_response:"videos,images,credits"
         }})
     });
     return {movie:data,error,isLoading};

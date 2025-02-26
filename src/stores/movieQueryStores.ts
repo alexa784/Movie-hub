@@ -1,5 +1,4 @@
 import { create } from "zustand";
-import { Parameter } from "../hooks/useSortParams";
 
 export interface QueryMovies{
     genreId?:number;
@@ -35,7 +34,7 @@ const useQueryMovieStore= create<QueryMovieStore>(set=>({
     }),
     setSearchParam:(searchParam:string|null)=>set((store)=>{     // only search text should be set to undefined
         store.queryMovies.searchText=undefined;
-        if(searchParam) return ({queryMovies:{...store,searchParam}});
+        if(searchParam) return ({queryMovies:{...store.queryMovies,searchParam}});
         else return ({queryMovies:{...store,searchParam:undefined}});
     }),
     resetQuery:()=>set(()=>({queryMovies:{}}))

@@ -24,19 +24,20 @@ const MovieGrid = () => {
   return (
     <>
       <div className="container">
-        <div className="row row-cols-1 row-cols-xs-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 row-cols-xxl-5">
-          {data && (
-            <InfiniteScroll
-              dataLength={totalFetchedMovies} //This is important field to render the next data
-              next={fetchNextPage}
-              hasMore={hasNextPage}
-              loader={<MovieCardSkeleton />}
-              endMessage={
-                <p style={{ textAlign: "center" }}>
-                  <b>Yay! You have seen it all</b>
-                </p>
-              }
-            >
+        {data && (
+          <InfiniteScroll
+            style={{ overflow: "hidden" }}
+            dataLength={totalFetchedMovies} //This is important field to render the next data
+            next={fetchNextPage}
+            hasMore={hasNextPage}
+            loader={<MovieCardSkeleton />}
+            endMessage={
+              <p style={{ textAlign: "center" }}>
+                <b>Yay! You have seen it all</b>
+              </p>
+            }
+          >
+            <div className="row row-cols-1 row-cols-xs-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 row-cols-xxl-5">
               {data?.pages.map((p) =>
                 p.results.map((m) => (
                   <div className="col" key={m.id}>
@@ -44,11 +45,11 @@ const MovieGrid = () => {
                   </div>
                 ))
               )}
-            </InfiniteScroll>
-          )}
-          {isLoading &&
-            skeletons.map((s, index) => <MovieCardSkeleton key={index} />)}
-        </div>
+            </div>
+          </InfiniteScroll>
+        )}
+        {isLoading &&
+          skeletons.map((s, index) => <MovieCardSkeleton key={index} />)}
       </div>
       <button
         className="btn btn-primary position-fixed bottom-0 end-0 m-3"
