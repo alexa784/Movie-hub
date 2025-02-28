@@ -1,4 +1,3 @@
-import { Spinner } from "react-bootstrap";
 import Dropdown from "react-bootstrap/esm/Dropdown";
 import useProvider from "../hooks/useProvider";
 import useProviders from "../hooks/useProviders";

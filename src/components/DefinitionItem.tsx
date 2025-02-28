@@ -7,10 +7,10 @@ interface Props {
 
 const DefinitionItem = ({ children, name }: Props) => {
   return (
-    <>
+    <div className="mb-2">
       <h4>{name}</h4>
       {children}
-    </>
+    </div>
   );
 };
 

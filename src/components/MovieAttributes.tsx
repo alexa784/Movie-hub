@@ -17,13 +17,6 @@ const MovieAttributes = ({ movie }: Props) => {
     <div className="container">
       <div className="row row-cols-2 row-cols-sm-2 ">
         <div className="col">
-          <DefinitionItem name="Providers">
-            {providers?.map((p) => (
-              <Text text={p.provider_name} key={p.provider_id} />
-            ))}
-          </DefinitionItem>
-        </div>
-        <div className="col">
           <DefinitionItem name="Genres">
             {movie.genres.map((g) => (
               <Text text={g.name} key={g.id} />
@@ -33,6 +26,13 @@ const MovieAttributes = ({ movie }: Props) => {
         <div className="col">
           <DefinitionItem name="Rate">
             <MovieScore score={movie.vote_average} />
+          </DefinitionItem>
+        </div>
+        <div className="col">
+          <DefinitionItem name="Providers">
+            {providers?.map((p) => (
+              <Text text={p.provider_name} key={p.provider_id} />
+            ))}
           </DefinitionItem>
         </div>
         <div className="col">

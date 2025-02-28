@@ -5,6 +5,7 @@ import MovieAttributes from "../components/MovieAttributes";
 import Trailer from "../components/Trailer";
 import LongText from "../components/LongText";
 import { Stack } from "react-bootstrap";
+import ActorsList from "../components/ActorsList";
 
 const MovieDetailsPage = () => {
   const params = useParams();
@@ -27,6 +28,7 @@ const MovieDetailsPage = () => {
             </Stack>
           </div>
           <div className="col">
+            <ActorsList movie={movie} />
             <MovieAttributes movie={movie} />
           </div>
         </div>

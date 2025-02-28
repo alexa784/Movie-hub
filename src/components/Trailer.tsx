@@ -21,10 +21,8 @@ const Trailer = ({ platfromKey, site }: Props) => {
       return null;
       break;
   }
-
-  console.log(path);
   return (
-    <div className="mb-1" style={{ overflow: "hidden", borderRadius: 25 }}>
+    <div className="mb-2" style={{ overflow: "hidden", borderRadius: 25 }}>
       <ReactPlayer url={path} width={"100%"} controls></ReactPlayer>
     </div>
   );
