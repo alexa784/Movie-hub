@@ -15,7 +15,7 @@ const MovieCard = ({ movie }: Props) => {
     ? "https://image.tmdb.org/t/p/w500/" + movie.backdrop_path
     : noImage;
   return (
-    <Card className="m-1 mb-5">
+    <Card className="m-1 mb-2">
       <Link to={`movie/${movie.id}`}>
         <Card.Img src={imagePath} variant="top" />
       </Link>

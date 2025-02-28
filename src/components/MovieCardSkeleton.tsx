@@ -2,10 +2,10 @@ import { Card, Placeholder, Stack } from "react-bootstrap";
 
 const MovieCardSkeleton = () => {
   return (
-    <Card className="m-2 mb-5">
+    <Card className="m-2 mb-5" style={{ overflow: "hidden", width: "15em" }}>
       <div
         className="placeholder"
-        style={{ width: "100%", height: "400px" }}
+        style={{ width: "300px", height: "200px" }}
       ></div>
       <Card.Body>
         <Placeholder as={Card.Title} animation="glow">
