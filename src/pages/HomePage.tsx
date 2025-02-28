@@ -1,9 +1,6 @@
-import { Stack } from "react-bootstrap";
 import GenreList from "../components/GenreList";
-import GenreListButton from "../components/GenreListButton";
+import GroupSelectors from "../components/GroupSelectors";
 import MovieGrid from "../components/MovieGrid";
-import Providers from "../components/ProvidersList";
-import SortMoviesList from "../components/SortSelector";
 
 const HomePage = () => {
   return (
@@ -14,11 +11,7 @@ const HomePage = () => {
             <GenreList />
           </div>
           <div className="col-sm-12 col-lg-10">
-            <Stack direction="horizontal" className="ms-1">
-              <Providers />
-              <GenreListButton />
-              <SortMoviesList />
-            </Stack>
+            <GroupSelectors />
             <MovieGrid />
           </div>
         </div>

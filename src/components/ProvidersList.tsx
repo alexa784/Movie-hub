@@ -23,7 +23,7 @@ const ProvidersLists = () => {
   if (isLoading) return <ButtonSkeleton />;
 
   return (
-    <Dropdown style={{ marginBottom: 5, paddingLeft: 11 }}>
+    <Dropdown style={{ marginBottom: 5, paddingLeft: 9 }}>
       <Dropdown.Toggle variant="outline-secondary" id="dropdown-basic">
         {selectedProvider ? selectedProvider.provider_name : "Providers"}
       </Dropdown.Toggle>
