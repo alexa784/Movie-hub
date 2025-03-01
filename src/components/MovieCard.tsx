@@ -25,11 +25,7 @@ const MovieCard = ({ movie }: Props) => {
           <MovieScore score={movie.vote_average} />
         </Stack>
         <Card.Title className="mb-1">
-          <Link
-            className="text-decoration-none"
-            to={`movie/${movie.id}`}
-            style={{ fontSize: "1.5em" }}
-          >
+          <Link className="text-decoration-none" to={`movie/${movie.id}`}>
             {movie.title}
           </Link>
         </Card.Title>
