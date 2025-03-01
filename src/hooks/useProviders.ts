@@ -1,6 +1,5 @@
-import React from 'react'
-import { ApiClient, ResponseData } from '../services/api-client';
 import { useQuery } from '@tanstack/react-query';
+import { ApiClient, ResponseData } from '../services/api-client';
 
 // https://api.themoviedb.org/3/watch/providers/movie?api_key=YOUR_API_KEY
 interface Provider{

@@ -22,12 +22,6 @@ interface DataType{
     id:number;
     results:Country;
 }
-
-const printProviders=(providers:Provider[])=>{
-    console.log('______________');
-    providers.forEach(elem=>console.log(elem.provider_name));
-    console.log('_______________');
-}
 const clearDuplications=(country:Country)=>{
     let US=country.US;
     const providers:Provider[]=[];

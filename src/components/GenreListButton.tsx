@@ -1,7 +1,7 @@
-import { Dropdown, Spinner } from "react-bootstrap";
+import { Dropdown } from "react-bootstrap";
+import useGenre from "../hooks/useGenre";
 import useGenres from "../hooks/useGenres";
 import useQueryMovieStore from "../stores/movieQueryStores";
-import useGenre from "../hooks/useGenre";
 import ButtonSkeleton from "./ButtonSkeleton";
 
 const GenreListButton = () => {

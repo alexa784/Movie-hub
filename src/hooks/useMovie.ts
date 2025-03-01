@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { ApiClient, ResponseData } from "../services/api-client";
+import { ApiClient } from "../services/api-client";
 import { Movie } from "./useMovies";
 
 

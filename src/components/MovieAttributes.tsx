@@ -1,10 +1,8 @@
-import React from "react";
 import { Movie } from "../hooks/useMovies";
-import DefinitionItem from "./DefinitionItem";
 import useProvidersByMovieId from "../hooks/useProvidersByMovieId";
-import Text from "./Text";
+import DefinitionItem from "./DefinitionItem";
 import MovieScore from "./MovieScore";
-import MovieActor from "./MovieActor";
+import Text from "./Text";
 
 interface Props {
   movie: Movie;
@@ -12,6 +10,9 @@ interface Props {
 
 const MovieAttributes = ({ movie }: Props) => {
   const { providers, error, isLoading } = useProvidersByMovieId(movie.id);
+
+  if (error) throw error;
+  if (isLoading) return <h5>Loading movie attributes...</h5>;
 
   return (
     <div className="container">

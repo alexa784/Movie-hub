@@ -1,22 +1,15 @@
-import { Image, Spinner } from "react-bootstrap";
-import { Movie } from "../hooks/useMovies";
-import useProvidersByMovieId from "../hooks/useProvidersByMovieId";
+import { Spinner } from "react-bootstrap";
 import {
   FaAmazon,
   FaApple,
   FaGooglePlay,
-  FaYoutube,
-  FaSpotify,
   FaQuestion,
+  FaSpotify,
+  FaYoutube,
 } from "react-icons/fa";
-import {
-  SiNetflix,
-  SiAmazonprime,
-  SiApple,
-  SiGoogleplay,
-  SiYoutubemusic,
-  SiHbo,
-} from "react-icons/si";
+import { SiAmazonprime, SiNetflix } from "react-icons/si";
+import { Movie } from "../hooks/useMovies";
+import useProvidersByMovieId from "../hooks/useProvidersByMovieId";
 
 import { IconType } from "react-icons";
 

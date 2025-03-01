@@ -5,15 +5,7 @@ import MovieCardSkeleton from "./MovieCardSkeleton";
 import GridSkeleton from "./GridSkeleton";
 
 const MovieGrid = () => {
-  const {
-    data,
-    error,
-    isLoading,
-    fetchNextPage,
-    isFetchingNextPage,
-    hasNextPage,
-  } = useMovies();
-  const skeletons = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+  const { data, error, isLoading, fetchNextPage, hasNextPage } = useMovies();
   if (error) throw new Error("Server ne salje podatke!");
 
   let totalFetchedMovies = 0;
