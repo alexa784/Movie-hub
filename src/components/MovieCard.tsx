@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import MovieScore from "./MovieScore";
 import Emoji from "./Emoji";
 import noImage from "../assets/no-image-placeholder-6f3882e0.webp";
+import FavoriteIcon from "./FavoriteIcon";
 
 interface Props {
   movie: Movie;
@@ -25,9 +26,12 @@ const MovieCard = ({ movie }: Props) => {
           <MovieScore score={movie.vote_average} />
         </Stack>
         <Card.Title className="mb-1">
-          <Link className="text-decoration-none" to={`movie/${movie.id}`}>
-            {movie.title}
-          </Link>
+          <Stack direction="horizontal" className="justify-content-between">
+            <Link className="text-decoration-none" to={`movie/${movie.id}`}>
+              {movie.title}
+            </Link>
+            <FavoriteIcon />
+          </Stack>
         </Card.Title>
         <Emoji movie={movie} />
       </Card.Body>
