@@ -27,7 +27,7 @@ const ProvidersLists = () => {
         {selectedProvider ? selectedProvider.provider_name : "Providers"}
       </Dropdown.Toggle>
 
-      <Dropdown.Menu>
+      <Dropdown.Menu style={{ maxHeight: "300px", overflowY: "auto" }}>
         {defaultItem}
         {FirstTenproviders?.map((p) => {
           return (

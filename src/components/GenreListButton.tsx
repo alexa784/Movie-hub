@@ -19,12 +19,22 @@ const GenreListButton = () => {
   if (isLoading) return <ButtonSkeleton />;
 
   return (
-    <Dropdown style={{ marginBottom: 5, paddingLeft: 11 }}>
+    <Dropdown
+      style={{
+        marginBottom: 5,
+        paddingLeft: 11,
+      }}
+    >
       <Dropdown.Toggle variant="outline-secondary" id="dropdown-basic">
         {selectedGenre ? selectedGenre.name : "Genres"}
       </Dropdown.Toggle>
 
-      <Dropdown.Menu>
+      <Dropdown.Menu
+        style={{
+          maxHeight: "300px",
+          overflowY: "auto",
+        }}
+      >
         {defaultItem}
         {genres?.map((g) => {
           return (
