@@ -6,24 +6,24 @@ export interface Parameter{
 
 const sortParams=[
     {
+        name:"Favorites",
+        apiParam:"favorites"
+    },
+    {
         name:"Popular",
         apiParam:"popularity.desc"
     },
     {
-        name:"Newest",
-        apiParam:"release_date.desc"
-    },
-    /*{
-        name:"Title",
-        apiParam:"original_title.desc"
-    },*/
-    {
-        name:"Rate",
+        name:"Top Rated",
         apiParam:"vote_average.desc"
     },
     {
-        name:"Votes",
+        name:"Most Voted",
         apiParam:"vote_count.desc"
+    },
+    {
+        name:"Newest",
+        apiParam:"release_date.desc"
     },
 ]
 

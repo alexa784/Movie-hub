@@ -10,10 +10,16 @@ const SortSelectorMobile = () => {
   const previousSelectedParam = useSortParam(paramApi);
 
   return (
-    <Stack direction="horizontal" gap={1} className="ms-2">
+    <Stack
+      direction="horizontal"
+      gap={1}
+      className="ms-2"
+      style={{ maxWidth: "100%", overflowX: "auto" }}
+    >
       {sortParamsList.map((p, index) => {
         return (
           <button
+            style={{ whiteSpace: "nowrap" }}
             className={`btn btn-outline-primary btn-sm rounded-lg ${
               previousSelectedParam?.name === p.name ? "active" : null
             }`}
