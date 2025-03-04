@@ -1,17 +1,24 @@
-import { useState } from "react";
 import { MdStarBorder } from "react-icons/md";
+import useFavoriteMoviesStore from "../stores/favoriteMoviesStore";
 
 interface Props {
-  isFavorite: boolean;
+  isFavorite?: boolean;
+  movieId: number;
 }
 
-const FavoriteIcon = ({ isFavorite = false }: Props) => {
-  const [favorite, setFavorite] = useState(isFavorite);
+const FavoriteIcon = ({ movieId }: Props) => {
+  const { favorites, setFavorites } = useFavoriteMoviesStore();
+  const isFavorite = favorites.includes(movieId);
+
   return (
     <div>
       <MdStarBorder
-        color={favorite ? "yellow" : "gray"}
-        onClick={() => setFavorite(!favorite)}
+        color={isFavorite ? "yellow" : "gray"}
+        onClick={() => {
+          isFavorite
+            ? setFavorites(favorites.filter((id) => id !== movieId))
+            : setFavorites([...favorites, movieId]);
+        }}
       />
     </div>
   );

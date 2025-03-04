@@ -30,7 +30,7 @@ const MovieCard = ({ movie }: Props) => {
             <Link className="text-decoration-none" to={`movie/${movie.id}`}>
               {movie.title}
             </Link>
-            <FavoriteIcon />
+            <FavoriteIcon movieId={movie.id} />
           </Stack>
         </Card.Title>
         <Emoji movie={movie} />
