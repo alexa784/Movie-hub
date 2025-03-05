@@ -11,6 +11,13 @@ const MovieGrid = () => {
   let totalFetchedMovies = 0;
   if (data && data.pages && data.pages[0]) {
     totalFetchedMovies = data.pages[0].results.length * data.pages.length;
+
+    if (totalFetchedMovies === 0)
+      return (
+        <p style={{ textAlign: "center" }}>
+          <b>No movies listed.</b>
+        </p>
+      );
   }
   return (
     <>

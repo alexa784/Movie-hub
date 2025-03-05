@@ -14,7 +14,7 @@ const SortSelectorMobile = () => {
       direction="horizontal"
       gap={1}
       className="ms-2"
-      style={{ maxWidth: "100%", overflowX: "auto" }}
+      style={{ maxWidth: "100%", overflowX: "auto", paddingBottom: "5px" }}
     >
       {sortParamsList.map((p, index) => {
         return (

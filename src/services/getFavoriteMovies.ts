@@ -1,11 +1,9 @@
-import { InfiniteData, useQueries } from "@tanstack/react-query";
-import useMovie from "../hooks/useMovie";
+import { useQueries } from "@tanstack/react-query";
 import { Movie } from "../hooks/useMovies";
 import useFavoriteMoviesStore from "../stores/favoriteMoviesStore";
 import { ApiClient, ResponseData } from "./api-client";
 
 
-//  const { data, error, isLoading, fetchNextPage, hasNextPage } = useMovies();
 const getFavoriteMovies = () => {
     const { favorites } = useFavoriteMoviesStore();
     const apiClient = new ApiClient<Movie>(`/3/movie/`);
@@ -18,11 +16,7 @@ const getFavoriteMovies = () => {
             }}),
         })),
     });
-    console.log(data);
-
     const movies=data.map(d=>d.data);
-    console.log(movies);
-
     const filteredMovies = movies.filter(Boolean) as Movie[];
     return {
       data: {
