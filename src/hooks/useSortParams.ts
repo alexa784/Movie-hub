@@ -6,7 +6,7 @@ export interface Parameter{
 
 const sortParams=[
     {
-        name:"Favorites",
+        name:"My Favorites",
         apiParam:"favorites"
     },
     {
