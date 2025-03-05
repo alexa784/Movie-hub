@@ -21,4 +21,7 @@ export class ApiClient<FetchType>{
   fetchData=(params?:AxiosRequestConfig)=>{
     return axiosInstance.get<FetchType>(this.endpoint,params).then(res=>res.data)
   }
+  fetchMovie=(id:number,params?:AxiosRequestConfig)=>{
+    return axiosInstance.get<FetchType>(this.endpoint+id,params).then(res=>res.data)
+  }
 }

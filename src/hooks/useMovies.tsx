@@ -3,6 +3,7 @@
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { ApiClient, ResponseData } from "../services/api-client";
 import getEndpoint from "../services/getEndpoint";
+import getFavoriteMovies from "../services/getFavoriteMovies";
 import useQueryMovieStore from "../stores/movieQueryStores";
 
 interface Video {
@@ -52,12 +53,14 @@ export interface Movie {
   credits: { cast: Person[] };
   production_companies: Company[];
 }
+
 const useMovies = () => {
   const { queryMovies } = useQueryMovieStore();
   const endPoint = getEndpoint(queryMovies);
   const apiClient = new ApiClient<ResponseData<Movie>>(endPoint);
 
-  return useInfiniteQuery<ResponseData<Movie>, Error>({
+  const favoriteMoviesObj = getFavoriteMovies();
+  const infinteQueryObj = useInfiniteQuery<ResponseData<Movie>, Error>({
     queryKey: ["movies", queryMovies],
     queryFn: ({ pageParam = 1 }) => {
       return apiClient.fetchData({
@@ -80,6 +83,12 @@ const useMovies = () => {
     initialPageParam: 1,
     staleTime: 24 * 60 * 60 * 1000, //24h
   });
+
+  infinteQueryObj.data;
+
+  return queryMovies.searchParam === "favorites"
+    ? favoriteMoviesObj
+    : infinteQueryObj;
 };
 
 export default useMovies;
