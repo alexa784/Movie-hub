@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Movie } from "../hooks/useMovies";
 import DefinitionItem from "./DefinitionItem";
+import Movie from "../models/movie";
 
 interface Props {
   movie: Movie;

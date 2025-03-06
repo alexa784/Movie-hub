@@ -1,7 +1,8 @@
 import { useQueries } from "@tanstack/react-query";
-import { Movie } from "../hooks/useMovies";
+
 import useFavoriteMoviesStore from "../stores/favoriteMoviesStore";
 import { ApiClient, ResponseData } from "./api-client";
+import Movie from "../models/movie";
 
 
 const getFavoriteMovies = () => {

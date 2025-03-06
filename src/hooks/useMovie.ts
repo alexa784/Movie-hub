@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { ApiClient } from "../services/api-client";
-import { Movie } from "./useMovies";
+import Movie from "../models/movie";
+
 
 
 const useMovie=(id?:number)=>{

@@ -1,11 +1,11 @@
 import { Card, Stack } from "react-bootstrap";
-import { Movie } from "../hooks/useMovies";
 import ProvidersIconList from "./ProvidersIconList";
 import { Link } from "react-router-dom";
 import MovieScore from "./MovieScore";
 import Emoji from "./Emoji";
 import noImage from "../assets/no-image-placeholder-6f3882e0.webp";
 import FavoriteIcon from "./FavoriteIcon";
+import Movie from "../models/movie";
 
 interface Props {
   movie: Movie;

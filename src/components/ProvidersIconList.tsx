@@ -8,10 +8,11 @@ import {
   FaYoutube,
 } from "react-icons/fa";
 import { SiAmazonprime, SiNetflix } from "react-icons/si";
-import { Movie } from "../hooks/useMovies";
+
 import useProvidersByMovieId from "../hooks/useProvidersByMovieId";
 
 import { IconType } from "react-icons";
+import Movie from "../models/movie";
 
 interface Props {
   movie: Movie;

@@ -1,7 +1,6 @@
+import { FaExclamationTriangle, FaServer } from "react-icons/fa";
 import { isRouteErrorResponse, useRouteError } from "react-router-dom";
 import NavBar from "../components/NavBar";
-import { FaExclamationTriangle, FaTimesCircle } from "react-icons/fa";
-import { FaServer } from "react-icons/fa";
 
 const PageDoesntExist = () => (
   <>

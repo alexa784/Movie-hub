@@ -1,5 +1,5 @@
-import { Movie } from "../hooks/useMovies";
 import useProvidersByMovieId from "../hooks/useProvidersByMovieId";
+import Movie from "../models/movie";
 import DefinitionItem from "./DefinitionItem";
 import MovieScore from "./MovieScore";
 import Text from "./Text";

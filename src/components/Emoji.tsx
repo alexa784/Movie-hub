@@ -1,6 +1,6 @@
 import { Figure } from "react-bootstrap";
 import getCorrespondingEmoji from "../services/getCorrespondingEmoji";
-import { Movie } from "../hooks/useMovies";
+import Movie from "../models/movie";
 
 interface Props {
   movie: Movie;
