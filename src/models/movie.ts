@@ -1,3 +1,7 @@
+import Company from "./company";
+import Person from "./person";
+import Video from "./video";
+
 export default interface Movie {
     id: number;
     title: string;
